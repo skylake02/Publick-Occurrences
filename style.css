@@ -81,6 +81,7 @@ main {  }
     main .about p { text-align: center; font-size: 16px; }
     main .about h3 { font-size: 24px; }
         main .about h3:not(:first-of-type) { margin-top: 60px; }
+    main .about a { text-decoration: underline; }
     main .archive h3 { font-size: 48px; }
         main .archive h3:not(:first-of-type) { margin-top: 30px; margin-bottom: 10px; }
     main .archive ul { text-align: center; list-style-type: none; padding: 0; }
