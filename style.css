@@ -20,8 +20,18 @@ body {
 h1, h2, h3, h4, h5, h6 { font-family: "Noto Serif", serif; }
 
 a { color: var(--color-main); text-decoration: none; }
-a:hover { color: var(--color-main); text-decoration: underline; }
+a:hover { color: var(--color-main); }
 a:visited { color: var(--color-main); }
+
+a:hover:after { transform: scaleX(1); }
+a:after {
+    display: block;
+    content: '';
+    border-bottom: solid 2px var(--color-main);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: 0% 50%;
+}
 
 .wrapper { 
     width: 80%;
@@ -62,7 +72,12 @@ header .wrapper { padding: 20px 0; }
         padding: 0;
     }
     
-        header nav ul li { text-align: center; width: 120px; }
+        header nav ul li { 
+            text-align: center; 
+            width: 120px; 
+            display: flex; 
+            justify-content: center; 
+    }
             header nav ul li a { font-size: 18px; }
 
 /* MAIN */
@@ -82,10 +97,11 @@ main {  }
     main .about h3 { font-size: 28px; }
         main .about h3:not(:first-of-type) { margin-top: 60px; }
     main .about a { text-decoration: underline; }
+        main .about a:after { display: none; }
     main .archive h3 { font-size: 48px; }
         main .archive h3:not(:first-of-type) { margin-top: 30px; margin-bottom: 10px; }
-    main .archive ul { text-align: center; list-style-type: none; padding: 0; }
-        main .archive ul li { font-size: 16px; margin-bottom: 10px; }
+    main .archive ul { text-align: center; list-style-type: none; padding: 0; display: flex; flex-flow: column; }
+        main .archive ul li { font-size: 16px; display: block; margin: 0 auto; margin-bottom: 10px; }
     @media screen and (max-width: 960px) { 
         main .post { margin-top: 0; }
     }
